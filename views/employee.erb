@@ -58,7 +58,7 @@
 
         <ul class="list-group">
           <% @employee.courses.each do |course| %> <!-- remember, through has_many and belongs_to employee already have courses info -->
-          <li class="list-group-item"><a href="/show_course?id=<%=course.id %>"><%= course.name %></a></li>
+          <li class="list-group-item"><a href="/show_course?id=<%= course.id %>"><%= course.name %></a></li>
           <% end %>
         </ul>
       <a href="/edit_employee?id=<%= @employee.id %>" class="btn btn-primary">Edit Employee</a>

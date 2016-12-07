@@ -67,7 +67,12 @@
         </div>
         <div class="form-group">
           <label for="employee_id">Employee (teacher)</label>
-          <input type="text" class="form-control" name="employee_id">
+          <select name="employee_id">
+            <% @employees.each do |employee| %>
+            <option value="<%= employee.id %>"><%= employee.name %></option>
+            <!--  ternary => if employee.id == @course.employee.id (you can either compare ids or objects) then it's what we want, have it selected if not, nothign. Check the developer's code on Chrome. It will look a lot like MDN example-->
+            <% end %>
+          </select>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
 

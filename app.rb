@@ -141,6 +141,8 @@ get '/courses' do
 end
 
 get '/new_course' do
+  @employees = Employee.all
+
   erb :new_course
 end
 
@@ -159,7 +161,7 @@ end
 
 get '/edit_course' do
   @course = Course.find(params["id"])
-  @employees = Employee.all
+  @employees = Employee.all 
 
   erb :edit_course
 end
